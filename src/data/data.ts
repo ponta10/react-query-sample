@@ -1,0 +1,1 @@
+export let todos = [{ id: 1, text: 'First Todo', completed: false }];
