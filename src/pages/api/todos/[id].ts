@@ -10,7 +10,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  if (req.method === "PUT") {
+  if (req.method === "GET") {
+    const todo = todos[todoIndex];
+    res.status(200).json(todo);
+  } else if (req.method === "PUT") {
     const updatedTodo = { ...todos[todoIndex], ...req.body };
     todos[todoIndex] = updatedTodo;
     res.status(200).json(updatedTodo);
