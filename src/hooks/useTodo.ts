@@ -2,8 +2,8 @@ import { NewTodo, Todo } from "@/types";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
-async function fetchTodos() {
-  const { data } = await axios.get("/api/todos");
+export async function fetchTodos() {
+  const { data } = await axios.get("http://localhost:3000/api/todos");
   return data;
 }
 
